@@ -1,0 +1,58 @@
+{
+    "name": "employee_privileges",
+    "options": {
+        "idInjection": false,
+        "mysql": {
+            "schema": "northwind",
+            "table": "employee_privileges"
+        },
+        "validateUpsert": true
+    },
+    "properties": {
+        "employeeId": {
+            "type": "Number",
+            "required": true,
+            "length": null,
+            "precision": 10,
+            "scale": 0,
+            "id": 1,
+            "mysql": {
+                "columnName": "employee_id",
+                "dataType": "int",
+                "dataLength": null,
+                "dataPrecision": 10,
+                "dataScale": 0,
+                "nullable": "N"
+            }
+        },
+        "privilegeId": {
+            "type": "Number",
+            "required": true,
+            "length": null,
+            "precision": 10,
+            "scale": 0,
+            "id": 2,
+            "mysql": {
+                "columnName": "privilege_id",
+                "dataType": "int",
+                "dataLength": null,
+                "dataPrecision": 10,
+                "dataScale": 0,
+                "nullable": "N"
+            }
+        }
+    },
+    "base": "PersistedModel",
+    "relations": {
+        "fkEmployeePrivilegesEmployees1rel": {
+            "model": "Employees",
+            "type": "belongsTo",
+            "foreignKey": "employeeId"
+        },
+        "fkEmployeePrivilegesPrivileges1rel": {
+            "model": "Privileges",
+            "type": "belongsTo",
+            "foreignKey": "privilegeId"
+        }
+    }
+}
