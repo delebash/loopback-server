@@ -11,8 +11,8 @@ async function main() {
   let user = await User.create([
     {
       id: 0,
-      username: 'test',
-      email: "test@ageektech.com",
+      username: 'admin',
+      email: "admin@ageektech.com",
       password: 'test12345',
       emailVerified: true
     }
@@ -21,7 +21,7 @@ async function main() {
 
   //Do not specify id field
   let role = await Role.create({
-    name: 'test',
+    name: 'admin',
     description: "Administrator Role"
   });
   console.log(role.id)
@@ -32,6 +32,8 @@ async function main() {
     principalId: user[0].id,
     roleId: role.id
   });
+
+ // ds.disconnect();
 
 //   Role.find({
 //     where: {

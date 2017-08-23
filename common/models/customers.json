@@ -282,5 +282,8 @@
         }
     },
     "base": "PersistedModel",
-    "relations": {}
+    "relations": {},
+  "mixins":{
+    "RowCount": true
+  }
 }
